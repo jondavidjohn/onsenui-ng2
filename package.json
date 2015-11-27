@@ -1,0 +1,38 @@
+{
+  "name": "onsen-ng2",
+  "version": "0.0.0",
+  "author": "",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server www -o",
+    "build": "browserify -d src/index.js -o www/index.js",
+    "build:watch": "watchify src/index.js -v -d -o www/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "angular2": "2.0.0-alpha.46",
+    "babel-preset-es2015": "^6.1.18",
+    "babel-preset-stage-1": "^6.1.18",
+    "babelify": "^7.2.0",
+    "browserify": "^12.0.1",
+    "http-server": "^0.8.5",
+    "onsenui": "^2.0.0-beta",
+    "reflect-metadata": "^0.1.2",
+    "watchify": "^3.6.1",
+    "zone.js": "^0.5.8"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015",
+            "stage-1"
+          ]
+        }
+      ]
+    ]
+  }
+}
