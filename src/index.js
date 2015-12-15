@@ -1,21 +1,18 @@
-import "reflect-metadata"
-import "zone.js"
-import { Component, bootstrap } from "angular2/angular2"
+import { bootstrap } from 'angular2/platform/browser'
+import { Component } from 'angular2/core'
+
+@Component({
+  selector: '#app',
+  template: `
+    <ons-page>
+      <ons-toolbar>
+        <div class="center">Title</div>
+      </ons-toolbar>
+    </ons-page>
+  `
+})
 
 class App {
 }
-
-App.annotations = [
-  new Component({
-    selector: '#app',
-    template: `
-      <ons-page>
-        <ons-toolbar>
-          <div class="center">Title</div>
-        </ons-toolbar>
-      </ons-page>
-    `
-  })
-]
 
 bootstrap(App).catch(err => console.error(err))
